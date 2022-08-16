@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style ="text-align: center;">
+    <h1 style="color:blue;">Karunya University</h1>
+    <hr>
+    
+    <a href="home.html">Home page</a>&nbsp;&nbsp;
+    <a href="application.html">Application form</a>
+
+</div>
+<hr>
+<form action="server.php" method="post">
+    <!-- <form action="/action_page.php"> -->
+        <fieldset>
+            <legend align="center">Application Form</legend > 
+            <div style ="text-align: center;">
+          <table align="center">
+<tr><td align="left">Name</td>
+<td><input type="text" placeholder="Enter your name" required>
+</td></tr>
+<tr><td align="left">Application Number</td>
+    <td><input type="text" placeholder="KU2021CSE1001" required>
+    </td></tr>
+    <tr><td align="left">Password:</td>
+        <td><input type="password" placeholder="*******"required>
+        </td></tr>
+        <tr><td align="left">Birthday:</td>
+        <td><input type="date" required>
+            </td></tr>
+            <tr><td align="left">Mobile Number:</td>
+                <td><input type="number" placeholder="Enter mobile number"required>
+                </td></tr>
+                <tr><td align="left">Email:</td>
+                    <td><input type="email" placeholder="Enter email id"required>
+                    </td></tr>
+                    <tr><td align="left">Gender</td>
+                    <td><input type="radio" name="gender" value="male"> Male
+<input type="radio" name="gender" value="female"> Female
+</td>
+</tr>
+<tr><td align="left">Address:</td>
+    <td><textarea name="paragraph_text" cols="20" rows="5"required></textarea>
+    </td></tr>
+    <tr><td align="left">Languages known:</td>
+        <td><input type="checkbox">Hindi
+        <td><input type="checkbox">Telugu
+        <td><input type="checkbox">Tamil
+        <td><input type="checkbox">English
+        </td></tr>
+        <tr><td align="left">Select your course:</td>
+            <td><select name="course" id="course">
+                <option value="CSE">Btech CSE</option>
+                <option value="ECE">Btech ECE</option>
+                
+              </select>
+            </td></tr>
+            <tr><td align="left">Upload your Photo:</td>
+                <td><input type="file" id="myFile" name="filename">
+                </td></tr>
+                <tr><td align="right">
+                    <progress align="right" id="file" value="50" max="100"> 50% </progress>
+                  </td></tr>
+                  <tr>
+                    <td align="right">
+                    <input  type="submit"required>
+                </td>
+                
+              </tr>
+              
+            
+        </fieldset>
+        </form>
+    </table>
+    </div>
+      </form>
