@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Loan EMI Calculator</title>
+
+	<style>
+		
+		h1 {
+			font-size: 35px;
+		}
+		
+		h1 {
+			font-size: 21px;
+			margin-top: 20px;
+		}
+		
+		.calculator {
+			width: 400px;
+			height: 550px;
+			background-color: white;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translateX(-50%) translateY(-50%);
+			padding: 20px 0px 0px 50px;
+            border-style:solid;
+			border-radius: 50px;
+			color: blue;
+           
+		}
+		
+		input {
+			padding: 7px;
+			width: 70%;
+			margin-top: 7px;
+		}
+        #d1
+        {
+            background-color: blue;
+            color: white;
+            border-radius: 10px;
+            padding: 10px;
+            width:70%;
+            
+        }
+        #d2
+        {
+            background-color: blue;
+            color: white;
+            border-radius: 10px;
+            padding: 10px;
+            width:70%;
+            
+        }
+        #d3
+        {
+            background-color: blue;
+            color: white;
+            border-radius: 10px;
+            padding: 10px;
+            width:70%;
+        }
+        #d4
+        {
+            background-color: blue;
+            color: white;
+            border-radius: 10px;
+            padding: 10px;
+            width:70%;
+        }
+	</style>
+</head>
+
+<body>
+	<div class="calculator">
+		<h1>Loan EMI Calculator</h1>
+		<p>Loan Amount (₹) 	: <br>
+			<input id="amount" type="number"
+			onkeyup="Calculate()">
+		</p>
+
+		<p>Annual Interest Rate : <br>
+			<input id="rate" type="number"
+			onkeyup="Calculate()">
+		</p>
+
+		<p>Tenure : <br>
+			<input id="years" type="number"
+			onkeyup="Calculate()">
+		</p>
+        <div id="d1">Loan Amount: 
+         </div>
+        <br>
+        
+        <div id="d2">Total interest:</div>
+        <br>
+        <div id="d3">EMI:</div>
+        <br>
+        <div id="d4">Total repayment:</div>
+<br>
+
+
+	</div>
+    
+
+	<script>
+    function Calculate() {
+
+         amount = document.getElementById("amount").value;
+         rate = document.getElementById("rate").value;
+         years = document.  getElementById("years").value;
+         
+       /* emiN=amount*(rate/100.0)*(Math.pow((1+(rate/100)),years));
+        emiD=(Math.pow((1+(rate/100.0)),(years-1) ));
+        emi=(emiN/emiD).toFixed(2);*/
+        rate = rate / (12 * 100); // one month interest
+        years = years * 12; // one month period
+        emi = ((amount * rate * Math.pow(1 + rate, years)) / (Math.pow(1 + rate, years) - 1)).toFixed(2);
+        tor=(emi*years).toFixed(2);
+        tot=(tor-amount).toFixed(2);
+        document.getElementById("d1").innerHTML ="Loan Amount: "+ amount;
+        document.getElementById("d2").innerHTML = "Total interest: "+tot;
+        document.getElementById("d3").innerHTML = "EMI: " +emi;
+        document.getElementById("d4").innerHTML = "Total repayment: "+tor;
+    }</script>
+</body>
+
+</html>
