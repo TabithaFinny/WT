@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script>
+    let A1 = [];
+        let A2 = [];
+
+        function DL(){
+            A1.pop();
+            A2.pop();
+            update();
+        }
+
+        function DF(){
+            A1.shift();
+            A2.shift();
+            update();
+        }
+
+        function store(){
+
+            var name = document.getElementById('n1').value;
+            var num = document.getElementById('n2').value;
+
+            for(var i =0; i<num.length;i++){
+                if ((A1[i] == name) | (A2[i] == num)){
+                    var temp = "Contact already exists\n" + name + " - " + num;
+                    window.alert(temp)
+                    return;
+                }
+            }
+
+            A1.push(name);
+            A2.push(num);
+            update();
+
+        }
+
+        function update(){
+            var element = document.getElementById("res");
+            element.innerHTML = "";
+            var txt = "";
+            var tag = document.createElement("p");
+
+            for(var i = 0; i<A1.length;i++){
+                txt = (i+1)+". "+A1[i] + " - " + A2[i];  
+                tag.appendChild(document.createTextNode(txt));
+                tag.appendChild(document.createElement("br"));
+                element.appendChild(tag);
+                
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <br><br>
+
+    <div class="container-fluid d-flex justify-content-center">
+        <h1 class="display-4 m-2">Telephone Directory</h1>
+    </div>
+
+    <div class="container-fluid mt-3 text-center col-12 d-flex justify-content-center align-items-center">
+        <form action="" class="form-group col-12  d-flex justify-content-center">
+            <input id="n1" type="text" class="form-control col-2 p-2 m-2" placeholder="Enter Name" required>
+
+            <input id="n2" type="tel" class="form-control col-2 p-2 m-2" placeholder="Enter Phone Number" required>
+        </form>
+    </div>
+
+    <div class="container-fluid mt-3 text-center col-12 d-flex justify-content-center align-items-center">
+        <button class="btn btn-outline-primary m-2" onclick="store()">Add Contact</button>
+        <button class="btn btn-outline-danger m-2" onclick="DF()">Delete First Contact</button>
+        <button class="btn btn-outline-danger m-2" onclick="DL()">Delete Last Contact</button>
+    </div>
+
+    <hr>
+    <div class="container-fluid mt-3 text-center col-12 d-flex justify-content-center align-items-center" id="res">
+
+    </div>
+    <hr>
+    
+</body>
+</html>
