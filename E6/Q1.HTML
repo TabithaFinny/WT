@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="app.js"> </script>
+    <style>
+        #box {
+            margin: auto;
+			width: 150px;
+			height: 150px;
+            
+            border: 2px solid blue;
+			background-color: yellow;
+             color: blue;
+             text-align: center;
+           
+		}
+    </style>
+</head>
+<body>
+   <div id="box">Hello World</div> 
+   <br>
+   Background Color: <input id="bgcolor" type="color" onchange="change(this.value)">
+   <br>
+   <br>
+   Text Color: <input id="tcolor" type="color" onchange="change(this.value)">
+   <br>
+   <br>
+   Text size: 
+<select name="size" id="tsize" onchange="change(this.value)">
+  <option value="22">22</option>
+  <option value="23">23</option>
+  <option value="24">24</option>
+  <option value="25">25</option>
+</select>
+<br>
+<br>
+   Box width: <input id="width" type="text" onkeyup="change(this.value)">
+   <br>
+   <br>
+
+   Box height: <input id="height" type="text" onkeyup="change(this.value)">
+   <br>
+   <br>
+
+   Border Radius: <input id="border" type="range" onchange="change(this.value)">
+</body>
+</html>
