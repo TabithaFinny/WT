@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+		
+		h1 {
+			font-size: 35px;
+		}
+		
+		h1 {
+			font-size: 21px;
+			margin-top: 20px;
+		}
+		
+		.calculator {
+			width: 400px;
+			height: 550px;
+			background-color: white;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translateX(-50%) translateY(-50%);
+			padding: 20px 0px 0px 50px;
+            border-style:solid;
+			border-radius: 50px;
+			color: blue;
+           
+		}
+		
+		input {
+			padding: 7px;
+			width: 70%;
+			margin-top: 7px;
+		}
+        #d1
+        {
+            background-color: blue;
+            color: white;
+            border-radius: 10px;
+            padding: 10px;
+            width:70%;
+            
+        }
+        #d2
+        {
+            background-color: blue;
+            color: white;
+            border-radius: 10px;
+            padding: 10px;
+            width:70%;
+            
+        }
+        #d3
+        {
+            background-color: blue;
+            color: white;
+            border-radius: 10px;
+            padding: 10px;
+            width:70%;
+        }
+        #d4
+        {
+            background-color: blue;
+            color: white;
+            border-radius: 10px;
+            padding: 10px;
+            width:70%;
+        }
+	</style>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script>
+         var app=angular.module("myApp",[]); //module
+        app.controller("control",function($scope){ 
+            $scope.Calculate=function(){
+                var amount=parseInt($scope.amount);
+                var rate=parseInt($scope.rate);
+                var years=parseInt($scope.years);
+                rate = rate / (12 * 100); // one month interest
+                years = years * 12; // one month period
+                emi = ((amount * rate * Math.pow(1 + rate, years)) / (Math.pow(1 + rate, years) - 1)).toFixed(2);
+                tor=(emi*years).toFixed(2);
+                tot=(tor-amount).toFixed(2);
+                $scope.LR="LOAN AMOUNT : "+(amount); 
+                $scope.IR="Total interest: "+tot;
+                $scope.ER="EMI: " +emi;
+                $scope.RR="Total repayment: "+tor;      
+
+            }
+        });
+            </script>
+</head>
+<body ng-app="myApp" ng-controller="control">
+    <div class="calculator">
+		<h1>Loan EMI Calculator</h1>
+		<p>Loan Amount (₹) 	: <br>
+			<input ng-model="amount" type="number"
+			ng-keyup="Calculate()">
+		</p>
+
+		<p>Annual Interest Rate : <br>
+			<input ng-model="rate" type="number"
+			ng-keyup="Calculate()">
+		</p>
+
+		<p>Tenure : <br>
+			<input ng-model="years" type="number"
+			ng-keyup="Calculate()">
+		</p>
+        <div ng-bind="LR">Loan Amount: 
+         </div>
+        <br>
+        
+        <div ng-bind="IR">Total interest:</div>
+        <br>
+        <div ng-bind="ER">EMI:</div>
+        <br>
+        <div ng-bind="RR">Total repayment:</div>
+<br>
+
+
+	</div>    
+    </body>
+    </html>
