@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script>
+        var app=angular.module("myApp",[]);
+        app.controller("control",function($scope){
+            $scope.items=[]; 
+            $scope.addItem = function(){
+                $scope.items.push({"PN":$scope.m1,"PP":$scope.m2});
+            }
+            $scope.remove=function($index){
+                $scope.items.splice($index,1);
+            }
+        })
+    </script>
+</head>
+<body ng-app="myApp" ng-controller="control">
+    <p style="color:blue;font-size:30px;text-align:center;"><b>Product Inventory System</b></p>
+    <p style="color:blue;font-size:22px;text-align:center" >Enter the Product Name</p>
+    <input ng-model="m1" type="text"style="margin-left:43%;text-align: center;height:40px" placeholder="enter product name"><br>
+    <p style="color:blue;font-size:22px;text-align:center" >Enter the Product Price</p>
+    <input type="number" ng-model="m2"style="margin-left:43%;text-align: center;height:40px" placeholder="enter product price"><br><br>
+    <button ng-click="addItem()"style="font-size:20px;color:black;text-align:center;height:50px;margin-left:45%">
+        Add Product</button>
+    <hr>
+    <table border="1" cellspacing="0" width="100%">
+        <tr style="background-color:beige;color:black">
+            <th>Sl.No</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Remove</th>
+        </tr>
+        <tr ng-repeat="x in items">
+            <td>{{$index +1}}</td>
+            <td>{{x.PN}}</td>
+            <td>{{x.PP}}</td>
+            <td><button ng-click="remove($index)">Remove</button></td>
+        </tr>
+    </table>
+</body>
+</html>
