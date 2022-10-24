@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Age Calculator</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <style >
+    body{
+   
+    background-color: white;
+    padding: 0;
+    margin: 0;
+}
+* {
+    box-sizing: border-box;
+}
+.container{
+    width:520px;
+    height: auto;
+    margin: 100px auto;
+    background-color: rgb(209, 209, 219);
+ 
+    border-radius: 5px;
+}
+.base{
+    width: 100%;
+     
+    margin: 0;
+    overflow: hidden;
+    display: block;
+    float: none;
+}
+.block{
+    width: 135px;
+    padding: 5px 20px;
+ 
+    margin-left: 20px;
+    display: inline-block;
+   
+}
+.base h4{
+   
+    text-align: center;
+    height: 25px;
+  margin-top: 0px;
+ 
+  background: blue;
+ 
+    color: white;
+}
+ 
+.title{
+   
+    text-align: left;
+   
+    color: #1073d0;
+}
+input[type=text] {
+    width: 400px;
+    margin: auto;
+    outline: none;
+   
+    border: 2px solid;
+    padding: 5px;
+    background-color: white;
+    border-radius: 2px;
+    color: #1073d0;
+   
+}
+input[type=text]:focus{
+    background-color:white;
+    border: 2px solid rgb(7, 7, 7);
+   
+}
+input[type=button]{
+    width: 150px;
+    margin-left: 35%;
+  margin-top: 40px;
+    outline: none;
+    border: none;
+    border-radius: 2px;
+    background-color: #0761b6;
+    color: #ffffff;
+    padding: 14px 16px;
+    text-align: center;
+ 
+   
+}
+input[type=button]:hover{
+    background-color: #003669;
+}
+ 
+#age1{
+    display: block;
+    margin: 10px;
+  margin-top: 35px;
+    padding: 10px;
+  padding-bottom: 20px;
+  margin-left: 35%;
+  font-size: 200%;
+   
+   
+    color: navy;
+}
+#age2{
+    display: block;
+    margin: 5px;
+ 
+    padding: 10px;
+  padding-bottom: 20px;
+  margin-left: 30%;
+  font-size: large;
+   
+   
+    color: rgb(15, 128, 0);
+}
+ 
+  </style>
+</head>
+<body>
+ 
+<div class="container">
+  <form>
+    <div class="base">
+        <div class="enter">
+        <h4>Age Calculator</h4>
+    </div>
+  <div class="block">
+    <p class="title">Date</p>
+    <input type="text" name="date" id="date" placeholder="dd" required="required" minlength="1" maxlength="2" />
+  </div>
+  <br>
+  <div class="block">
+    <p class="title">Month</p>
+    <input type="text" name="month" id="month" placeholder="mm" required="required" minlength="1" maxlength="2" />
+  </div>
+  <br>
+  <div class="block">
+    <p class="title">Year</p>
+    <input type="text" name="year" id="year" placeholder="yyyy" required="required" minlength="4" maxlength="4" />
+  </div>
+  </div>
+  <br>
+  <div class="base">
+    <div class="enter">
+    <input type="button" name="submit" id="btn" value="Find Age" />
+    </div>
+  </div>
+    <div id="age1"></div>
+    <div id="age2"></div>
+  </form>
+</div>
+</body>
+<script>
+   $(document).ready(function() {
+    $('#btn').click(function(){
+        let d1=$('#date').val();
+        let m1=$('#month').val();
+        let y1=$('#year').val();
+ 
+ 
+  let date = new Date();
+  let d2 = date.getDate();
+  let m2 = 1 + date.getMonth();
+  let y2 = date.getFullYear();
+  let month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+ 
+  if(d1 > d2){
+    d2 = d2 + month[m2 - 1];
+    m2 = m2 - 1;
+  }
+  if(m1 > m2){
+    m2 = m2 + 12;
+    y2 = y2 - 1;
+  }
+  let d = d2 - d1;
+  let m = m2 - m1;
+  let y = y2 - y1;
+  $('#age1').html("Age Details ");
+  $('#age2').html(+y+" years "+m+" months "+d+" days")
+ 
+})
+   })</script>
+</html>
+ 
+ 
