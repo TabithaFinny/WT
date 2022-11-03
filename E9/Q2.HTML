@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="Q2.CSS">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <script>
+        var app=angular.module("myApp",['ngRoute']);
+        app.config(function($routeProvider){
+           $routeProvider.when('/login',{
+            templateUrl:'login.html'
+           })
+           .when('/register',{
+            templateUrl:'register.html'
+           })
+
+        });
+    </script>
+</head>
+<body ng-app="myApp">
+    <h1>Welcome to my website</h1>
+    <hr>
+    <div class="sidebar" width="20%">
+        <a href="#!login"><b>Login</b></a>
+        <a href="#!register"><b>Register</b></a>
+    </div>
+    <div class="content" ng-view> </DIV>
+       <div class="c1" width="80%"> <h2>Karunya Institute of Technology and Sciences</h2>
+
+    <div class="banner"></div>
+
+    <div class="info">
+        <h3>About us</h3>
+        <p>Karunya Institute of Technology and Sciences, was founded with the noble vision to raise professionals and leaders of high academic calibre and unblemished character, nurtured with a strong motivation and commitment to serve humanity. 
+            The institution is the fulfillment of the vision of its founders Late Dr. D. G. S. Dhinakaran and the present Chancellor Dr. Paul Dhinakaran.
+             Established in 1986 as an Engineering College, it was granted an autonomous status in 1999 and declared Deemed-to-be University by the University Grants Commission (UGC) in recognition of its academic excellence by the Ministry of Human Resources Development under section 3 of the UGC Act, 1956 vide notification no 9-3-2000-U3 dated 23.6.2004 of the Government of India. 
+            Accredited by NAAC, the institution offers a wide array of Bachelors, Masters and Doctoral Degree programmes in various branches of Engineering, Biotechnology, Food processing and Agricultural Sciences. From a humble beginning of 180 students, the institution has rapidly grown to 8491 students and 452 faculty representing 18 academic departments.
+        </p>
+    </div>
+
+    <div class="image1">
+        <h2>CSE</h2>
+    </div>
+    <div class="image2">
+        <h2>LIBRARY</h2>
+    </div>
+    <div class="image3">
+        <h2>BIOTECH</h2>
+    </div>
+<div class="tnp">
+    <div class="campus">
+        <h2>Campus Life</h2>
+        <p>The hostel administration is carried out by the Chief Warden, Joint Chief Wardens, Wardens, Senior Residence Advisors (SRAs), Residence Counselors and staffs.Studying and staying away from home creates exciting learning experience like combine studies, mutual discussions, debating, etc. that add attraction to residence life and students find support, solace while facing challenges during their college life.  In Karunya University effort has been made to provide wide range of facilities and support for every student who reside in campus. The University has 9 separate Men’s residences to comfortably accommodate 5200 boys in cozy single, double & four bedded rooms.  Residence Counselors regularly visit the students for counseling activities and the students can also avail tutor facilities at the residences.  The multiformity of the residence is found in sports, cultural, technical and spiritual events which keep the residence together. Men’s Residences has excellent infrastructure to meet the requirements of International, NRI and the Indian students. Each residence is self-sufficient with a spacious room, a lounge, a dining hall with mess and recreational facilities. The daily working of the nine residences were taken care by the Chief Warden (Men’s Residences).</p>
+    </div> 
+    <div class="image4"></div> 
+</div>
+    <div class="image5"> 
+        <div class="form">
+            <h1>Sign In</h1>
+            <label>Username</label>
+            <input type="text" placeholder="Enter Username/Email/Phone Number">
+            <label>Password</label>
+            <input type="password" placeholder="Enter Password">
+            <input type="submit" value="Sign In">
+        </div>
+    </div> 
+
+    <div class="drone">
+        <h2>Drone Technology</h2>
+        <p>The Aerospace department houses a Laboratory on UAV to enable education in unmanned aerial vehicles and to carry out research in applications of UAVs for societal applications. The facilities available with the lab are Quadcopter & Hexacopter with standard camera and display systems and a fixed wing UAV with sensors and specialized tools to carry out aerial surveillance and mapping.</p>
+    </div>
+    </div>
+
+</body>
+</html>
