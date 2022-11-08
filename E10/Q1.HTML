@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>Home Page</title>
+
+</head>
+<body align="center">
+ <br>
+ <h1 style="color: blue;">User Registration Form</h1>
+ <br>
+ <form name="myform" style="color: blue;" action="/register" method="POST">
+ Name<span style="color:red ">*</span><input type="text" name="myname1"
+required>
+
+ <br><br>
+ Password<span style="color:red ;">*</span><input type="password"
+name="myname2"
+ required>
+
+ <br><br>
+ Age<span style="color:red ;">*</span><input type="number" name="myname3"
+required>
+
+ <br><br>
+ Mobile number<span style="color:red ;">*</span><input type="number"
+name="myname4" required>
+
+ <br><br>
+ Email<span style="color:red ;">*</span><input type="email" name="myname5"
+required>
+
+ <br><br>
+ Gender<span style="color:red ;">*</span>
+ <input type="radio" id="gender" name="myname6" value="Male" required>
+ <label for="gender">Male</label>
+ <input type="radio" id="gender" name="myname6" value="Female"
+ required>
+ <label for="gender">Female</label>
+
+ <br><br>
+ State<span style="color:red ;">*</span>
+ <label for="states"></label>
+ <select name="states" id="states">
+ <option value="Tamil Nadu">Tamil Nadu</option>
+ <option value="Kerala">Kerala</option>
+ <option value="Maharashtra">Maharashtra</option>
+ <option value="Telengana">Telengana</option>
+ </select>
+
+ <br><br>
+ Skills:<input type="checkbox" id="vehicle1" name="name8" value="Java
+Script">
+ <label for="vehicle1"> Java Script</label><br>
+ <input type="checkbox" id="vehicle2" name="name9" value="Python">
+ <label for="vehicle2"> Python</label><br>
+ <input type="checkbox" id="vehicle3" name="name8" value="Java">
+ <label for="vehicle3"> Java</label><br>
+
+
+ <br><br>
+ <button type="submit">Submit</button>
+ </form>
+</body>
+</html>
